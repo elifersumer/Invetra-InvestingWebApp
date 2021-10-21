@@ -1,5 +1,5 @@
 <template>
-    <div class="container font-oswald">
+    <div class="container font-oswald fixed inset-0 mb-16 z-50">
         <div class="h-16 bg-primary w-screen flex flex-col">
             <div class="flex flex-row justify-between mx-3 mt-1 -mb-2 h-6">
                 <div class="flex flex-row">
