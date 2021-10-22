@@ -1,6 +1,6 @@
 <template>
     <div class="container font-oswald fixed inset-0 mb-16 z-50">
-        <div class="h-16 bg-primary w-screen flex flex-col">
+        <div class="h-16 bg-primary w-screen flex flex-col pr-4">
             <div class="flex flex-row justify-between mx-3 mt-1 -mb-2 h-6">
                 <div class="flex flex-row">
                     <img src="@/assets/Invetra.png" class="w-icon h-icon -mt-1">
@@ -12,7 +12,7 @@
                     <button class=" font-bold text-xs text-white bg-orange active:bg-darkorange w-btn h-btn rounded align-middle mr-1">
                         Sign Up
                     </button>
-                    <button class="text-xs text-white bg-darkblue w-btn h-btn rounded align-middle active:bg-black">Sign In</button>
+                    <button href=# class="text-xs text-white bg-darkblue w-btn h-btn rounded align-middle active:bg-black">Sign In</button>
                     <img src="@/assets/british.png" class="w-flag h-flag mt-1 ml-1" alt="EN">
                 </div>
             </div>

@@ -1,6 +1,7 @@
 <template>
-    <div class="container w-1/3 h-videos p-8 bg-white shadow-md rounded ml-4 absolute">
-        <div class="flex flex-col">
+    <div class="grid justify-items-start place-content-center relative w-1/3 h-full bg-white shadow-md rounded ml-4 p-8">
+        <div class="flex flex-col ">
+            <h1 class="text-3xl font-bold mb-4 text-darkblue">Most Watched Videos</h1>
             <div class="flex flex-row mb-1">
                 <iframe width="264" height="196" src="https://www.youtube.com/embed/Oa9UviZSvDk" title="YouTube video player" 
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
