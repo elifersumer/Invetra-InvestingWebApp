@@ -4,7 +4,7 @@
             <div class="flex flex-row justify-between mx-3 mt-1 -mb-2 h-6">
                 <div class="flex flex-row">
                     <img src="@/assets/Invetra.png" class="w-icon h-icon -mt-1">
-                    <a class="text-2xl text-white font-bold" href=#>INVETRA</a>
+                    <a class="text-lg text-white font-bold" href=#>INVETRA</a>
                 </div>
                 <input class="bg-secondary h-6 px-5 pr-16 rounded-lg text-sm focus:outline-none placeholder-gray" 
                             type="search" name="search" placeholder="Search">
@@ -18,8 +18,8 @@
             </div>
             <div class="flex flex-row justify-between text-white">
                 <div class="h-6 w-screen flex flex-row justify-center font-semibold mt-3">
-                    <a class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" href=#>Home</a>
-                    <a class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" href=#>Markets</a>
+                   <router-link class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" to="/">Home</router-link>
+                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" to="/markets">Markets</router-link>
                     <a class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" href=#>Watchlist</a>
                     <a class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" href=#>News</a>
                     <a class="p-1 text-md my-auto mr-16 hover:bg-white hover:text-darkblue rounded-t-sm" href=#>Analysis</a>
