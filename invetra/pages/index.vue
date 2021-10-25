@@ -1,5 +1,5 @@
 <template>
-  <div class="h-myscreen bg-lightblue bg-repeat font-oswald">
+  <div class="h-auto bg-lightblue bg-repeat font-oswald">
     <Navbar/>
     <Home/>
     <Footer/>

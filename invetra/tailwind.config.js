@@ -19,7 +19,11 @@ module.exports = {
             orange: '#FF7C53',
             darkorange: 'rgba(255, 83, 30, 1)',
             gray: colors.gray,
-            lightblue: 'rgba(10, 75, 94, 0.05)'
+            lightblue: 'rgba(10, 75, 94, 0.05)',
+            t:{
+              white: 'rgba(255, 255, 255, 0.5)'
+              
+            }
           },
           fontFamily:{
             oswald:['Oswald', 'sans-serif']
@@ -36,7 +40,6 @@ module.exports = {
                   btn: '25px',
                   flag: '20px',
                   icon:'40px',
-                  myscreen: '980px'
               }
           }
         },

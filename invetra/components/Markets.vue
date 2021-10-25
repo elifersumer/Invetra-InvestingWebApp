@@ -1,6 +1,6 @@
 <template>
-  <div class="-z-1">
-      <StockList @search="search($event)" :stockList="stockList" v-model="stockList"/>
+  <div>
+      <StockList :stockList="stockList"/>
   </div>
 </template>
 
@@ -42,9 +42,6 @@ export default {
       })
     },
     methods: {
-      search(){
-        
-      }
     },
 
   

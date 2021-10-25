@@ -1,7 +1,8 @@
 <template>
-    <div class="h-myscreen  bg-repeat font-oswald">
+    <div class="h-auto bg-lightblue bg-repeat font-oswald">
         <Navbar/>
-        <Markets/>
+        <News/>
+        <Footer/>
     </div>
 </template>
 

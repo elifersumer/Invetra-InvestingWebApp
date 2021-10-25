@@ -57,7 +57,7 @@ export default {
   mounted(){
     //Cripto
       axios.get("https://api.collectapi.com/economy/cripto",{'headers':{
-        'Authorization':'apikey 46dtTLfQwLSIArdVV2JER4:1Ic99sgbbftK8I4ZRWNLf3',
+        'Authorization':'apikey 75QONL8eURuIZP2plBWd0z:6mqlbUxZAJnsl5DQxXFqOq',
         'Content-type':'application/json'
       }})
       .then(response=>{
@@ -77,13 +77,13 @@ export default {
       })
     //Parite
       axios.get("https://api.collectapi.com/economy/parite",{'headers':{
-        'Authorization':'apikey 46dtTLfQwLSIArdVV2JER4:1Ic99sgbbftK8I4ZRWNLf3',
+        'Authorization':'apikey 75QONL8eURuIZP2plBWd0z:6mqlbUxZAJnsl5DQxXFqOq',
         'Content-type':'application/json'
       }})
       .then(response=>{
         response.data.result.forEach((res, idx) => {
           this.pariteList.push({
-            name: res.name,
+            pariteName: res.name,
             buyingstr: res.buyingstr,
             sellingstr: res.sellingstr,
             buying: res.buying,
@@ -99,7 +99,7 @@ export default {
       })
     //LiveBorsa
     axios.get("https://api.collectapi.com/economy/liveBorsa",{'headers':{
-        'Authorization':'apikey 46dtTLfQwLSIArdVV2JER4:1Ic99sgbbftK8I4ZRWNLf3',
+        'Authorization':'apikey 75QONL8eURuIZP2plBWd0z:6mqlbUxZAJnsl5DQxXFqOq',
         'Content-type':'application/json'
       }})
       .then(response=>{
