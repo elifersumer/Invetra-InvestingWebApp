@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1 relative w-2/3 h-full mt-2 ml-10 mb-4 font-oswald font-bold bg-white p-9 rounded shadow-md text-darkblue">
+    <div class="grid grid-cols-1 relative w-3/5 h-full mt-1 ml-9 mb-3 font-oswald font-bold bg-white p-10 rounded shadow-md text-darkblue">
         <a href=# class="text-lg mb-4">Stocks</a>
             <div class="flex flex-row place-content-between place-items-center text-xxs text-gray-400">
                 <p class="mt-2 text-center">Name</p>

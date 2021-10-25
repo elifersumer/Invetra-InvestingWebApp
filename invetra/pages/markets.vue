@@ -1,14 +1,17 @@
 <template>
-    <div>
-        <Markets class="mt-20"/>
+    <div class="h-myscreen  bg-repeat font-oswald">
+        <Navbar/>
+        <Markets/>
     </div>
 </template>
 
 <script>
-import Markets from '@/components/Markets.vue'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
     export default {
         components:{
-            Markets
+            Navbar,
+            Footer
         }
     }
 </script>

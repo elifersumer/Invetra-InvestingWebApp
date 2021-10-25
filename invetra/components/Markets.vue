@@ -1,24 +1,20 @@
 <template>
-  <div>
-    <Navbar/>
-    <StocksWidget :stockList="stockListTopGainers"/>
-    
+  <div class="-z-1">
+      <StockList @search="search($event)" :stockList="stockList" v-model="stockList"/>
   </div>
 </template>
 
 <script>
 import axios from "axios"
-import Navbar from '@/components/Navbar.vue'
 import StocksWidget from '@/components/StocksWidget.vue'
+import StockList from '@/components/StockList.vue'
 export default {
   components:{
-    Navbar,
-    StocksWidget
+    StocksWidget, StockList
   },
   data(){
     return{
       stockList: [],
-      stockListTopGainers: [],
 
       stockName: "",
       stockPrice: null,
@@ -28,7 +24,7 @@ export default {
   mounted(){
     //LiveBorsa
     axios.get("https://api.collectapi.com/economy/liveBorsa",{'headers':{
-        'Authorization':'apikey 46dtTLfQwLSIArdVV2JER4:1Ic99sgbbftK8I4ZRWNLf3',
+        'Authorization':'apikey 18E4jglC7L6Upc1zMqoniu:4n8zaE3WRox1NEQhSMRcQG',
         'Content-type':'application/json'
       }})
       .then(response=>{
@@ -40,12 +36,16 @@ export default {
             id: idx,
           });
         });
-        this.stockListTopGainers = this.stockList.slice(0, 10)
       })
       .catch(e=>{
         console.log(e)
       })
-    }
+    },
+    methods: {
+      search(){
+        
+      }
+    },
 
   
 

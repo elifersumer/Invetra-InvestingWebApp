@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar/>
     <div class="flex flex-row">
       <Hero/>
       <PariteWidget :pariteList="pariteListFirst5"/>
@@ -27,8 +26,7 @@ export default {
     Video,
     CriptoWidget,
     PariteWidget,
-    StocksWidget,
-    Navbar
+    StocksWidget
   },
   data(){
     return{

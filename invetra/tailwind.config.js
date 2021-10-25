@@ -30,12 +30,13 @@ module.exports = {
                   navitems: '600px',
                   icon: '40px',
                   flag: '20px',
+                  90:'90%'
               },
               height:{
                   btn: '25px',
                   flag: '20px',
                   icon:'40px',
-                  myscreen: '1280px'
+                  myscreen: '980px'
               }
           }
         },

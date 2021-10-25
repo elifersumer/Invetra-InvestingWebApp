@@ -1,5 +1,5 @@
 <template>
-    <div class="grid justify-items-start place-content-center relative w-1/3 h-full bg-white shadow-md rounded ml-4 p-8">
+    <div class="grid justify-items-start place-content-center relative w-1/3 h-full bg-white shadow-md rounded ml-6 mt-1 p-8">
         <div class="flex flex-col ">
             <h1 class="text-3xl font-bold mb-4 text-darkblue">Most Watched Videos</h1>
             <div class="flex flex-row mb-1">

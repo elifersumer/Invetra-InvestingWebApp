@@ -1,18 +1,19 @@
 <template>
-  <div class="h-myscreen font-oswald">
+  <div class="h-myscreen bg-lightblue bg-repeat font-oswald">
     <Navbar/>
-    <router-view>
-    </router-view>
+    <Home/>
+    <Footer/>
   </div>
   
 </template>
 
 <script>
+import Footer from '@/components/Footer.vue'
 import Navbar from '@/components/Navbar.vue'
 
 export default {
   components:{
-    Navbar
+    Navbar,Footer
   },
   
   
