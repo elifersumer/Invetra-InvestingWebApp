@@ -46,6 +46,7 @@ module.exports = {
         variants:{
             extend:{
                 backgroundColor:['active','focus'],
+                display: ["group-hover"]
             }
         }
     }

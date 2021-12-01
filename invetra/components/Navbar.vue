@@ -1,7 +1,7 @@
 <template>
-    <div class="container font-oswald fixed h-12 inset-0 z-50">
-        <div class="h-16 bg-primary w-screen flex flex-col pr-4">
-            <div class="flex flex-row justify-between mx-3 mt-1 -mb-2 h-6">
+    <div class="container font-oswald fixed top-0 z-30">
+        <div class="bg-primary w-screen flex flex-col pr-4">
+            <div class="flex flex-row justify-between mx-3 mt-1 -mb-2">
                 <div class="flex flex-row">
                     <img src="@/assets/Invetra.png" class="w-icon h-icon -mt-1">
                     <router-link class="text-lg text-white font-bold" to="/">INVETRA</router-link>
@@ -17,16 +17,34 @@
                 </div>
             </div>
             <div class="flex flex-row justify-between text-white">
-                <div class="h-6 w-screen flex flex-row justify-center font-semibold mt-3">
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/">Home</router-link>
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/markets">Markets</router-link>
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/markets">Watchlist</router-link>
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/news">News</router-link>
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/markets">Analysis</router-link>
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/markets">Charts</router-link>
-                    <router-link class="p-1 text-md my-auto mr-16 hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/markets">Tools</router-link>
-                    <router-link class="p-1 text-md my-auto hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out" to="/markets">Robo Advisor</router-link>
-                </div>
+                <ul class="w-screen flex flex-row justify-center font-semibold mt-3">
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0 hover:text-darkblue transition duration-700 ease-in-out">
+                        <router-link class="p-1 text-md my-auto" to="/">Home</router-link>
+                    </li>
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0 hover:text-darkblue transition duration-700 ease-in-out">
+                        <router-link class="p-1 text-md my-auto" to="/markets">Markets</router-link>
+                    </li>
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0  hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out">
+                        <router-link class="p-1 text-md my-auto" to="/news">News</router-link>
+                    </li>
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0  hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out">
+                        <a href="#" class="text-md my-auto">Technical Analysis</a>
+                        <ul class="group-hover:block hidden absolute top-8 left-0 z-30 bg-white p-2 text-sm">
+                            <li class="p-2">
+                                <router-link to="/technical-analysis/volatility" class="text-black">Volatility</router-link>
+                            </li>
+                            <li class="p-2">
+                                <a href="#" class="text-black">Bollinger Band</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0  hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out">
+                        <router-link class="p-1 text-md my-auto" to="/charts">Charts</router-link>
+                    </li>
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0  hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out">
+                        <router-link class="text-md my-auto" to="/markets">Robo Advisor</router-link>
+                    </li>
+                </ul>
                 <router-link class="text-xs mr-4 mt-5 text-gray hover:text-darkblue transition duration-700 ease-in-out" to="/markets">HelpSupport</router-link>
             </div>
             

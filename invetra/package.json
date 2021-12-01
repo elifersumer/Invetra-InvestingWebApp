@@ -11,10 +11,21 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@progress/kendo-charts-vue-wrapper": "^2021.3.1109",
+    "@progress/kendo-datasource-vue-wrapper": "^2021.3.1109",
+    "@progress/kendo-theme-default": "^4.42.0",
+    "@progress/kendo-ui": "^2021.3.1109",
+    "apexcharts": "^3.30.0",
     "axios": "^0.23.0",
+    "chart.js": "^3.6.0",
     "core-js": "^3.15.1",
+    "cors": "^2.8.5",
+    "fs": "0.0.1-security",
     "nuxt": "^2.15.7",
     "nuxt-token-auth-module": "^2.4.3",
+    "plotly.js-dist": "^2.6.4",
+    "vue-apexcharts": "^1.6.2",
+    "vue-chartjs": "^3.5.1",
     "vue-router": "^3.5.2"
   },
   "devDependencies": {
