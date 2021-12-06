@@ -1,20 +1,21 @@
 <template>
-    <div class="bg-lightblue bg-repeat font-oswald">
+    <div class="h-screen bg-lightblue bg-repeat font-oswald">
         <Navbar/>
-        <Volatility/>
-        <Footer class="bottom-0"/>
+        <USD/>
+        <Footer/>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Volatility from '@/components/Volatility.vue'
+import USD from '@/components/USD.vue'
 import Navbar from "@/components/Navbar.vue"
 import Footer from "@/components/Footer.vue"
     export default {
         component:{
-            Navbar, Footer, Volatility
+            Navbar, Footer, USD
         },
+        
         
         }   
     

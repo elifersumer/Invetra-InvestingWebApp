@@ -5,11 +5,37 @@ from datetime import date, timedelta
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import requests
+
+api_key= 'b6b90c304ec78fa2c95ce348d5d2447a'
+def bollingerbands(aapl_symbol):
+    stockprices = requests.get(f"https://financialmodelingprep.com/api/v3/historical-price-full/{aapl_symbol}?timeseries=365&apikey={api_key}")
+    stockprices = stockprices.json()
+
+    stockprices = stockprices['historical'][-150:]
+    
+    stockprices = pd.DataFrame.from_dict(stockprices)
+    stockprices = stockprices.set_index('date')
+    stockprices['MA20'] = stockprices['close'].rolling(window=20).mean()
+    stockprices['20dSTD'] = stockprices['close'].rolling(window=20).std() 
+
+    stockprices['Upper'] = stockprices['MA20'] + (stockprices['20dSTD'] * 2)
+    stockprices['Lower'] = stockprices['MA20'] - (stockprices['20dSTD'] * 2)
+    
+    stockprices[['close','MA20','Upper','Lower']].plot(figsize=(10,4))
+    plt.grid(True)
+    plt.title(aapl_symbol + ' Bollinger Bands')
+    plt.axis('tight')
+    plt.ylabel('Price')
+    plt.savefig('C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/static/apple.png', bbox_inches='tight')
+    
+bollingerbands('AAPL')
+    
 
 aapl_symbol = 'AAPL'
 
 end_time = date.today()
-start_time = end_time - timedelta(days=65)
+start_time = end_time - timedelta(days=365)
 
 end = end_time.strftime('%Y-%m-%d')
 start = start_time.strftime('%Y-%m-%d')
@@ -28,11 +54,11 @@ std_aapl = daily_std_aapl*252**0.5
 
 fig_aapl, ax_aapl = plt.subplots(1, 1, figsize=(7,5))
 
-n, bins, patches = ax_aapl.hist(prices_aapl.returns.values , bins=50, alpha=0.65, color='blue')
+n, bins, patches = ax_aapl.hist(prices_aapl.returns.values , bins=50, alpha=0.65, color='#070E4D')
 
-ax_aapl.set_xlabel('log return of stock price')
-ax_aapl.set_ylabel('frequency of log return')
-ax_aapl.set_title('Historical volatility for '+aapl_symbol)
+ax_aapl.set_xlabel('Log Return of Stock Price')
+ax_aapl.set_ylabel('Frequency of Log Return')
+ax_aapl.set_title('1Y Time Period Historical Volatility for '+aapl_symbol)
 
 x_corr_aapl = ax_aapl.get_xlim()
 y_corr_aapl = ax_aapl.get_ylim()
@@ -44,8 +70,6 @@ ax_aapl.set_ylim(y_corr_aapl[0], y_corr_aapl[1])
 x = x_corr_aapl[0] + (x_corr_aapl[1]-x_corr_aapl[0])/30
 y = y_corr_aapl[1] + (y_corr_aapl[1]-y_corr_aapl[0])/15
 
-ax_aapl.text(x, y, 'Annualized Volatility: ' + str(daily_std_aapl)+ '%', fontsize=8, fontweight='bold')
-
 x = x_corr_aapl[0] + (x_corr_aapl[1]+x_corr_aapl[0])/15
 y -= (y_corr_aapl[1]-y_corr_aapl[0])/20
 
@@ -56,47 +80,45 @@ fig_aapl.savefig("C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/assets/aapl
 
 
 
-usd_symbol = 'USD'
+tsla_symbol = 'TSLA'
 
-json_prices_usd = YahooFinancials(usd_symbol).get_historical_price_data(start, end, 'daily')
+json_prices_tsla = YahooFinancials(tsla_symbol).get_historical_price_data(start, end, 'daily')
 
-prices_usd = pd.DataFrame(json_prices_usd[usd_symbol]['prices'])[['formatted_date','close']]
+prices_tsla = pd.DataFrame(json_prices_tsla[tsla_symbol]['prices'])[['formatted_date','close']]
 
-prices_usd.sort_index(ascending=False, inplace=True)
+prices_tsla.sort_index(ascending=False, inplace=True)
 
-prices_usd['returns'] = (np.log(prices_usd.close / prices_usd.close.shift(-1)))
+prices_tsla['returns'] = (np.log(prices_tsla.close / prices_tsla.close.shift(-1)))
 
-daily_std_usd = np.std(prices_usd.returns)
+daily_std_tsla = np.std(prices_tsla.returns)
 
-std_usd = daily_std_usd*252**0.5
+std_tsla = daily_std_tsla*252**0.5
 
-fig_usd, ax_usd = plt.subplots(1, 1, figsize=(7,5))
+fig_tsla, ax_tsla = plt.subplots(1, 1, figsize=(7,5))
 
-n_usd, bins_usd, patches_usd = ax_usd.hist(prices_usd.returns.values , bins=50, alpha=0.65, color='blue')
+n_tsla, bins_tsla, patches_tsla = ax_tsla.hist(prices_tsla.returns.values , bins=50, alpha=0.65, color='#070E4D')
 
-ax_usd.set_xlabel('log return of stock price')
-ax_usd.set_ylabel('frequency of log return')
-ax_usd.set_title('Historical volatility for '+aapl_symbol)
+ax_tsla.set_xlabel('Log Return of Stock Price')
+ax_tsla.set_ylabel('Frequency of Log Return')
+ax_tsla.set_title('1Y Time Period Historical Volatility for '+tsla_symbol)
 
-x_corr_usd = ax_usd.get_xlim()
-y_corr_usd = ax_usd.get_ylim()
+x_corr_tsla = ax_tsla.get_xlim()
+y_corr_tsla = ax_tsla.get_ylim()
 
-header_usd = y_corr_usd[1]/5
-y_corr_usd = (y_corr_usd[0], y_corr_usd[1] + 1)
-ax_usd.set_ylim(y_corr_usd[0], y_corr_usd[1])
+header_tsla = y_corr_tsla[1]/5
+y_corr_tsla = (y_corr_tsla[0], y_corr_tsla[1] + 1)
+ax_tsla.set_ylim(y_corr_tsla[0], y_corr_tsla[1])
 
-x_usd = x_corr_usd[0] + (x_corr_usd[1]-x_corr_usd[0])/30
-y_usd = y_corr_usd[1] + (y_corr_usd[1]-y_corr_usd[0])/15
+x = x_corr_tsla[0] + (x_corr_tsla[1]-x_corr_tsla[0])/30
+y = y_corr_tsla[1] + (y_corr_tsla[1]-y_corr_tsla[0])/15
 
-ax_usd.text(x, y, 'Annualized Volatility: ' + str(daily_std_usd)+ '%', fontsize=8, fontweight='bold')
+x = x_corr_tsla[0] + (x_corr_tsla[1]+x_corr_tsla[0])/15
+y -= (y_corr_tsla[1]-y_corr_tsla[0])/20
 
-x_usd = x_corr_usd[0] + (x_corr_usd[1]+x_corr_usd[0])/15
-y_usd -= (y_corr_usd[1]-y_corr_usd[0])/20
+img_name_tsla = "tsla_vol.png"
 
-img_name_usd= 'usd_vol.png'
-
-fig_usd.tight_layout()
-fig_usd.savefig('C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/assets/usd_vol.png')
+fig_tsla.tight_layout()
+fig_tsla.savefig("C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/assets/tsla_vol.png")
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
@@ -106,7 +128,7 @@ def home():
   data = {}
 
   data['data'] = {
-    "usd":{"volatility":daily_std_usd, "image":img_name_usd},
+    "tsla":{"volatility":daily_std_tsla, "image":img_name_tsla},
     "aapl":{"volatility":daily_std_aapl, "image":img_name_aapl}
     }
   return jsonify(data)

@@ -1,19 +1,19 @@
 <template>
     <div class="bg-lightblue bg-repeat font-oswald">
         <Navbar/>
-        <Volatility/>
+        <Bollinger/>
         <Footer class="bottom-0"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Volatility from '@/components/Volatility.vue'
+import Bollinger from '@/components/Bollinger.vue'
 import Navbar from "@/components/Navbar.vue"
 import Footer from "@/components/Footer.vue"
     export default {
         component:{
-            Navbar, Footer, Volatility
+            Navbar, Footer, Bollinger
         },
         
         }   

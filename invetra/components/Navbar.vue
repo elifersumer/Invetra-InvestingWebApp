@@ -21,8 +21,19 @@
                     <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0 hover:text-darkblue transition duration-700 ease-in-out">
                         <router-link class="p-1 text-md my-auto" to="/">Home</router-link>
                     </li>
-                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0 hover:text-darkblue transition duration-700 ease-in-out">
-                        <router-link class="p-1 text-md my-auto" to="/markets">Markets</router-link>
+                    <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0  hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out">
+                        <a href="#" class="text-md my-auto">Markets</a>
+                        <ul class="group-hover:block hidden absolute top-8 left-0 z-30 bg-white p-2 text-sm">
+                            <li class="p-2">
+                                <router-link to="/markets/stocks" class="text-black">Stocks</router-link>
+                            </li>
+                            <li class="p-2">
+                                <router-link to="/markets/currency" class="text-black">Currencies</router-link>
+                            </li>
+                            <li class="p-2">
+                                <router-link to="/markets/cripto" class="text-black">Criptos</router-link>
+                            </li>
+                        </ul>
                     </li>
                     <li class="group relative hover:bg-white hover:bg-opacity-50 py-0 px-5 z-0  hover:bg-t-white hover:text-darkblue transition duration-700 ease-in-out">
                         <router-link class="p-1 text-md my-auto" to="/news">News</router-link>
@@ -34,7 +45,7 @@
                                 <router-link to="/technical-analysis/volatility" class="text-black">Volatility</router-link>
                             </li>
                             <li class="p-2">
-                                <a href="#" class="text-black">Bollinger Band</a>
+                                <router-link to="/technical-analysis/bollinger" class="text-black">Bollinger Band</router-link>
                             </li>
                         </ul>
                     </li>
