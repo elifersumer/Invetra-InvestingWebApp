@@ -27,7 +27,7 @@ def bollingerbands(aapl_symbol):
     plt.title(aapl_symbol + ' Bollinger Bands')
     plt.axis('tight')
     plt.ylabel('Price')
-    plt.savefig('C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/static/apple.png', bbox_inches='tight')
+    plt.savefig('C:/Users/elifersumer/Projects/Invetra-InvestingWebApp-1/invetra/static/apple.png', bbox_inches='tight')
     
 bollingerbands('AAPL')
     
@@ -76,7 +76,7 @@ y -= (y_corr_aapl[1]-y_corr_aapl[0])/20
 img_name_aapl= 'aapl_vol.png'
 
 fig_aapl.tight_layout()
-fig_aapl.savefig("C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/assets/aapl_vol.png")
+fig_aapl.savefig("C:/Users/elifersumer/Projects/Invetra-InvestingWebApp-1/invetra/assets/aapl_vol.png")
 
 
 
@@ -118,7 +118,7 @@ y -= (y_corr_tsla[1]-y_corr_tsla[0])/20
 img_name_tsla = "tsla_vol.png"
 
 fig_tsla.tight_layout()
-fig_tsla.savefig("C:/Users/elife/OneDrive/Masaüstü/invetra/invetra/assets/tsla_vol.png")
+fig_tsla.savefig("C:/Users/elifersumer/Projects/Invetra-InvestingWebApp-1/invetra/assets/tsla_vol.png")
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})

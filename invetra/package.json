@@ -24,6 +24,7 @@
     "nuxt": "^2.15.7",
     "nuxt-token-auth-module": "^2.4.3",
     "plotly.js-dist": "^2.6.4",
+    "tailwindcss": "^2.2.19",
     "vue-apexcharts": "^1.6.2",
     "vue-chartjs": "^3.5.1",
     "vue-router": "^3.5.2"
